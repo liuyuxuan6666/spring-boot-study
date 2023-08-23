@@ -8,3 +8,14 @@ spring:
     suffix: .html
   application:
     name: HelloWorld
+# 此处配置JPA数据源
+# 当前引入了H2，即使什么都不写，也会调用H2
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test_db;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+# 启用H2控制台，http://localhost:8081/h2-console
+  h2:
+    console:
+      enabled: true

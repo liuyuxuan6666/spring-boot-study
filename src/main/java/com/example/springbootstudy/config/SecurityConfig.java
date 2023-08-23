@@ -23,13 +23,19 @@ public class SecurityConfig {
      */
     @Bean
     SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-        return  httpSecurity.authorizeRequests()
+        // 放行所有接口对所有路由
+        httpSecurity.authorizeRequests()
                 .anyRequest()
                 .permitAll()
                 .and()
                 .csrf()
-                .disable()
-                .build();
+                .disable();
+
+        // 禁用frameOptions安全策略，此项配置用于解决H2的console打不开的问题
+        httpSecurity.headers().frameOptions().disable();
+
+        // 返回，需要build一下才会返回合适的类型
+        return httpSecurity.build();
     }
 
 }
