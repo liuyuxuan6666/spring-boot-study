@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * REST controller中的方法返回的都不带模板
- * RequestMapping表示控制器的基本地址
+ * @RestController中的方法返回的都不带模板
+ * @RequestMapping表示控制器的基本地址
  */
 @RestController
 @RequestMapping("rest")
-public class SimpleRestController {
+public class SimpleRestStudyController {
 
     /**
      * 一个普通的REST方法

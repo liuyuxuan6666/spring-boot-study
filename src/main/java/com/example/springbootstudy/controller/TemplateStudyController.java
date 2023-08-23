@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 不加REST的controller，返回的是模板
- * RequestMapping表示控制器的基本地址
+ * @Controller表示是一个基于模板的控制器
+ * @RequestMapping表示控制器的基本地址
  */
 @Controller
 @RequestMapping("page")
-public class TemplateController {
+public class TemplateStudyController {
 
     /**
      * @Value 可以从配置文件中获取值
@@ -22,7 +22,7 @@ public class TemplateController {
 
     /**
      * 含模板的方法
-     * 模板使用String类型返回的
+     * 模板使用String类型返回
      * @return
      */
     @GetMapping("hello")
